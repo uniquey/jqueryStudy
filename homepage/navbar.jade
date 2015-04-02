@@ -1,0 +1,36 @@
+template(name='navbar')
+  nav.navbar.navbar-default(role='navigation')
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#navbar-collapse')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='/') Jquery
+      //a.navbar-logo.visible-xs(href="/") 
+        //img(alt="marrytips" src="http://www.uugai.com/logo/logo_b/20141107/141534918235491.png")
+    //.navbar-center
+      
+
+    #navbar-collapse.collapse.navbar-collapse
+      //+navbarnav equally:
+      +UI.dynamic template='navbarnav'
+      //+DynamicTemplate template= getTemplate data= getDataContext
+      +navbarright
+
+template(name='navbarnav')
+  ul.nav.navbar-nav
+    //li.active
+    li
+      a(href= "list") List
+    li
+      a(href="css") CSS
+    //li(id="middle-logo")
+      //a(href="/") 
+        //img(alt="marrytipsLogo" src="///assets/logoexample.png")
+
+
+template(name='navbarright')
+  ul.nav.navbar-nav.navbar-right
+    li
+      a(href='/settings') Settings
