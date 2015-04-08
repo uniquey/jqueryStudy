@@ -1,13 +1,42 @@
 template(name='css')
   .container
-    h1(id="cssCss") CSS
+    h1 CSS
   .container
     .row
       .col-md-9
         .contents
-          h2.page-header .css()
-          span(id="result")
+          h2(id='cssCss').page-header .css()
+          .row
+            ol
+              li 抽取某elem的css状态值，如
+                .row
+                  code $( elem ).css( "background-color" )
+                .row
+                  .col-sm-1
+                    p Click it
+                  .col-sm-3
+                    .cssColor(style="background-color:#FFCCCC;")
+                    .cssColor(style="background-color:#FFFFCC;")
+                    .cssColor(style="background-color:#AFEEEE;")
+                    .cssColor(style="background-color:#CCFFFF;")              
+                  .col-sm-5
+                    span(id="result")
+              li 给某elem换上后面的css状态，如
+                p.cssCss2 Move the mouse over here or the one under.
+                p.cssCss2 What do you see.
 
+         .contents
+           h2(id="hasClass").page-header .hasClass()
+           .row  
+            ul 
+              li 有这个class的，返回true         
+                p 例子：
+                  code $( "#" ).append( $( "p:first" ).hasClass( "selected" ).toString() ); 
+                p 详见
+                  a(href='http://api.jquery.com/hasClass/') http://api.jquery.com/hasClass/
+
+
+                  
 
 
 
@@ -17,3 +46,5 @@ template(name='css')
           ul.nav.bs-docs-sidenav
             li
               a(href="#cssCss") .css()
+            li 
+              a(href="hasClass") .hasClass()
