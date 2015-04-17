@@ -1,8 +1,7 @@
 template(name='css')
-  .container
+  .theme
     h1 CSS
   .container
-    .row
       .col-md-9
         .contents
           h2(id='cssCss').page-header .css()
@@ -10,7 +9,7 @@ template(name='css')
             ol
               li 抽取某elem的css状态值，如
                 .row
-                  code $( elem ).css( "background-color" )
+                  code $( elem ).css( "background-color","#FFFFCC" )
                 .row
                   .col-sm-1
                     p Click it
@@ -35,16 +34,61 @@ template(name='css')
                 p 详见
                   a(href='http://api.jquery.com/hasClass/') http://api.jquery.com/hasClass/
 
+         .contents
+           h2(id="addClass").page-header .addClass()
+           .row  
+            ul
+              li 给某elem增加一个Class
+                code 
 
+         .contents
+           h2(id="removeClass").page-header .removeClass()
+           .row  
+            ul
+              li 去掉某Class
+                code 
+                
+         .contents
+           h2(id="offset").page-header .offset()
+           .row 
+            ul
+              li 位移，仅有.left和.top两个属性，分别为距左和距右的值
+            ol
+              li 抽取某elem的位移状态值，如
+                p
+                  code var offset = $( this ).offset();
+                p
+                  code $( "#result" ).text( this.tagName + " coords ( " + offset.left + ", " + offset.top + " )" );
+              li 给某elem换上后面的位移值，如
+                p
+                  code $( "p:last" ).offset({ top: 10, left: 30 });
+
+
+         .contents
+           h2(id="untry").page-header Untry
+            a(href="#untry")
+              span
+           .row  
+            ul
+              li .cssHooks
+              li .cssNumber
                   
 
 
 
 
       .col-md-3
-        nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix-top    
+        nav.bs-docs-sidebar.hidden-print.hidden-xs.hidden-sm.affix-top 
           ul.nav.bs-docs-sidenav
             li
               a(href="#cssCss") .css()
             li 
-              a(href="hasClass") .hasClass()
+              a(href="#hasClass") .hasClass()
+            li 
+              a(href="#addClass") .addClass()
+            li 
+              a(href="#removeClass") .removeClass()   
+            li
+              a(href="#offset") .offset()                       
+            li
+              a(href="#untry") untry
